@@ -11,4 +11,5 @@
 
 ### Example of Technical Patterns
 - Engulfing Pattern
-![](/Users/richeyjay/Desktop/Candlestick_Pattern/Patterns/BullishEngulfingPatternExample.jpg)
+
+![](Patterns/BullishEngulfingPatternExample.jpg)
