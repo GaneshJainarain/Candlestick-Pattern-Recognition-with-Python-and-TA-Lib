@@ -8,3 +8,7 @@
 - Analyze the S&P500 for all the technical patterns.
 - Scanner for technical patterns
 - Web application 
+
+### Example of Technical Patterns
+- Engulfing Pattern
+![](/Users/richeyjay/Desktop/Candlestick_Pattern/Patterns/BullishEngulfingPatternExample.jpg)
