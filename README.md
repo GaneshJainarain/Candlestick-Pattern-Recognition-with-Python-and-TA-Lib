@@ -13,3 +13,9 @@
 - Engulfing Pattern
 
 ![](Patterns/BullishEngulfingPatternExample.jpg)
+
+## DEMO
+
+- Example of getting data on a stock from a certain start date to end date
+
+![](Outputs/ExampleDataOnStartEnd.png)
