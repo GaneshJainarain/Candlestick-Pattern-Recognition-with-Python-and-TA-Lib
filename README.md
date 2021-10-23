@@ -22,4 +22,15 @@
 ![](Outputs/ExampleDataOnStartEnd.png)
 
 - Output of data on dates that have and dont have the morningstar pattern, 0 for it doesnt have and 100 for it does.
+
+- "num = talib.CDLMORNINGSTAR(data Open, data High, data Low , data Close )"
+
+- If we print out "print(num[num !=0])" we see the dates that indicate a MorningStar pattern is detected 
+
 ![](Outputs/DataOnMorningstarPatternSearch.png)
+
+- The date that our program has outputted is 2021-03-22
+- If we observe this date we can confirm the MorningStar Pattern has been detected
+
+![](Outputs/ConfrimationOfMorningStarPatternAnalysis.png)
+
