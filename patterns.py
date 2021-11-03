@@ -1,4 +1,4 @@
-pattern = {
+patterns = {
     'CDL2CROWS':'Two Crows',
     'CDL3BLACKCROWS':'Three Black Crows',
     'CDL3INSIDE':'Three Inside Up/Down',

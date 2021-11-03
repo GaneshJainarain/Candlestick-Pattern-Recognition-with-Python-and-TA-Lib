@@ -1,3 +1,7 @@
+import os, csv
+import talib
+import yfinance as yf
+import pandas
 from flask import Flask, render_template
 from patterns import patterns
 
