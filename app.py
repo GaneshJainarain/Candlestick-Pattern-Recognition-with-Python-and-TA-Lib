@@ -14,6 +14,9 @@ def hello_world():
 
 @app.route('/snapshot')
 def snapshot():
+    with open('datasets/companies.csv') as f:
+        symbols = f.read().splitlines()
+        print(symbols)
     return {
         'code': 'success'
     }
