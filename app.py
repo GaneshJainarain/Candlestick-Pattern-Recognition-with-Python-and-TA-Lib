@@ -2,13 +2,16 @@ import os, csv
 import talib
 import yfinance as yf
 import pandas
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from patterns import patterns
 
 app = Flask(__name__)
 
 @app.route("/")
-def hello_world():
+def index():
+    pattern = request.args.get('pattern', None)
+    if pattern:
+        print(pattern)
     return render_template('index.html', patterns=patterns)
 
 
