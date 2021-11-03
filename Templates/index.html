@@ -11,8 +11,9 @@
 
     <form>
         <select name="pattern">
-            <option value="doji">doji</option>
-            <option value="engulfing">engulfing</option>
+            {% for pattern in patterns %}
+            <option value="{{ pattern }}">{{ patterns[pattern] }}</option>
+            {% endfor %}
         </select>
         <input type="submit" value="scan"/>
     </form>
