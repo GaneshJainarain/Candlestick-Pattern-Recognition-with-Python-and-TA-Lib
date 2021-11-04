@@ -1,7 +1,7 @@
 import os, csv
 import talib
 import yfinance as yf
-import pandas
+import pandas as pd
 from flask import Flask, render_template, request
 from patterns import patterns
 
@@ -11,7 +11,20 @@ app = Flask(__name__)
 def index():
     pattern = request.args.get('pattern', None)
     if pattern:
-        print(pattern)
+        #looping thrpugh all the files in this specific directory
+        #the os.listdir method lists all the files in the said directory and now we can loop through them
+        datafiles = os.listdir('datasets/daily')
+        for filename in datafiles:
+            #pandas dataframe
+            df = pd.read_csv('datasets/daily/{}'.format(filename))
+            #print(df)
+            try:
+                result = talib.CDLENGULFING(df['Open'], df['High'], df['Low'], df['Close'])
+                print(result)
+            except:
+                pass
+
+
     return render_template('index.html', patterns=patterns)
 
 
