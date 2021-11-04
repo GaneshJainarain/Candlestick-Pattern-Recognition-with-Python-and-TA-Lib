@@ -18,8 +18,9 @@ def index():
             #pandas dataframe
             df = pd.read_csv('datasets/daily/{}'.format(filename))
             #print(df)
+            pattern_function = getattr(talib, pattern)
             try:
-                result = talib.CDLENGULFING(df['Open'], df['High'], df['Low'], df['Close'])
+                result = pattern_function(df['Open'], df['High'], df['Low'], df['Close'])
                 print(result)
             except:
                 pass
