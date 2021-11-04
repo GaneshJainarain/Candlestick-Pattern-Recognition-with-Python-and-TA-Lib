@@ -19,7 +19,10 @@
     </form>
     
     {% for stock in stocks %}
-            {{stock}}
+        {% if stocks[stock][pattern] %}
+        {{stock}}
+        {{ stocks[stock]['company']}}
+        {% endif %}
     {% endfor %}
 
 

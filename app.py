@@ -41,13 +41,12 @@ def index():
                     stocks[symbol][pattern] = None
 
                     #print("{} triggered {}".format(filename, pattern))
-                    print("hi")
 
             except:
                 pass
 
 
-    return render_template('index.html', patterns=patterns, stocks=stocks)
+    return render_template('index.html', patterns=patterns, stocks=stocks, pattern=pattern)
 
 
 @app.route('/snapshot')
