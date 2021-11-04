@@ -10,8 +10,15 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     pattern = request.args.get('pattern', None)
+    #loop through on screen with dictionary
+    stocks = {}
+
+    with open('datasets/companies.csv') as f:
+        for row in csv.reader(f):
+            stocks[row[0]] = {'company' : row[1] }
+        print(stocks)
     if pattern:
-        #looping thrpugh all the files in this specific directory
+        #looping through all the files in this specific directory
         #the os.listdir method lists all the files in the said directory and now we can loop through them
         datafiles = os.listdir('datasets/daily')
         for filename in datafiles:
@@ -24,9 +31,10 @@ def index():
                 #print(result)
                 #Focusing on the last result/candlestick for newer data
                 last = result.tail(1).values[0]
-                print(last)
+                #print(last)
                 if last !=0:
-                    print("{} triggered {}".format(filename, pattern))
+                    #print("{} triggered {}".format(filename, pattern))
+                    print("hi")
 
             except:
                 pass
