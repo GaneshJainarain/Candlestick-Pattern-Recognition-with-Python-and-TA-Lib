@@ -17,7 +17,11 @@
         </select>
         <input type="submit" value="scan"/>
     </form>
-        
+    
+    {% for stock in stocks %}
+            {{stock}}
+    {% endfor %}
+
 
 </body>
 </html>

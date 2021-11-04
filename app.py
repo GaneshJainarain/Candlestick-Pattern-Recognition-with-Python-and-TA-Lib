@@ -26,13 +26,20 @@ def index():
             df = pd.read_csv('datasets/daily/{}'.format(filename))
             #print(df)
             pattern_function = getattr(talib, pattern)
+            symbol = filename.split('.')[0]
             try:
                 result = pattern_function(df['Open'], df['High'], df['Low'], df['Close'])
                 #print(result)
                 #Focusing on the last result/candlestick for newer data
                 last = result.tail(1).values[0]
                 #print(last)
-                if last !=0:
+                if last >0:
+                    stocks[symbol][pattern] = 'bullish'
+                elif last <0:
+                    stocks[symbol][pattern] = 'bearish'
+                else:
+                    stocks[symbol][pattern] = None
+
                     #print("{} triggered {}".format(filename, pattern))
                     print("hi")
 
@@ -40,7 +47,7 @@ def index():
                 pass
 
 
-    return render_template('index.html', patterns=patterns)
+    return render_template('index.html', patterns=patterns, stocks=stocks)
 
 
 @app.route('/snapshot')
