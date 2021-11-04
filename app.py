@@ -21,7 +21,13 @@ def index():
             pattern_function = getattr(talib, pattern)
             try:
                 result = pattern_function(df['Open'], df['High'], df['Low'], df['Close'])
-                print(result)
+                #print(result)
+                #Focusing on the last result/candlestick for newer data
+                last = result.tail(1).values[0]
+                print(last)
+                if last !=0:
+                    print("{} triggered {}".format(filename, pattern))
+
             except:
                 pass
 
