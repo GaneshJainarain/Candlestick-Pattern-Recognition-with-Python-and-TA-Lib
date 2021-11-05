@@ -34,3 +34,17 @@
 
 ![](Outputs/ConfrimationOfMorningStarPatternAnalysis.png)
 
+# Final Code Output
+
+- On Startup
+
+![](Outputs/StarterScanner.png)
+
+- Dropdown Menu
+
+![](Outputs/DropdownMenuWithAllPatterns.png)
+
+- Output When chosen pattern is selected
+
+![](Outputs/OutputWhenChosenPattern.png)
+
